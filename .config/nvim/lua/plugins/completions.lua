@@ -1,36 +1,27 @@
 return {
 	{
 		"saghen/blink.cmp",
-		dependencies = {
-			"saghen/blink.lib",
-			"rafamadriz/friendly-snippets",
-			"petertriho/cmp-git",
-		},
-		build = function()
-			require("blink.cmp").build():pwait()
-		end,
+		dependencies = { "rafamadriz/friendly-snippets" },
+
+		version = "1.*",
 
 		---@module 'blink.cmp'
 		---@type blink.cmp.Config
 		opts = {
-			keymap = {
-				preset = "default",
-				["<CR>"] = { "accept", "fallback" },
-				["<Tab>"] = { "select_next", "fallback" },
-				["<S-Tab>"] = { "select_prev", "fallback" },
+			keymap = { preset = "enter" },
+
+			appearance = {
+				nerd_font_variant = "mono",
 			},
+
 			completion = { documentation = { auto_show = false } },
+
 			sources = {
-				default = { "lsp", "path", "snippets", "buffer", "git" },
-				providers = {
-					git = {
-						name = "git",
-						module = "cmp_git.blink",
-						opts = {},
-					},
-				},
+				default = { "lsp", "path", "snippets", "buffer" },
 			},
-			fuzzy = { implementation = "rust" },
+
+			fuzzy = { implementation = "prefer_rust_with_warning" },
 		},
+		opts_extend = { "sources.default" },
 	},
 }

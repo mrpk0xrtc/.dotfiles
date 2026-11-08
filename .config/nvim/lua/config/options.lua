@@ -5,3 +5,4 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("set termbidi")
 vim.cmd("set noarabicshape")
 vim.cmd("set number")
+vim.o.autochdir = true
