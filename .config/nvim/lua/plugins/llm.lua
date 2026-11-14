@@ -14,7 +14,7 @@ return {
 				model = "qwen2.5-coder:3b",
 				api_type = "ollama",
 				max_tokens = 8192,
-				keep_alive = "5m",
+				keep_alive = "10m",
 				app_handler = {
 					-- Define a tool to explain selected code
 					CodeExplain = {

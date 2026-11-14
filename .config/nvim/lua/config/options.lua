@@ -6,3 +6,5 @@ vim.cmd("set termbidi")
 vim.cmd("set noarabicshape")
 vim.cmd("set number")
 vim.o.autochdir = true
+
+vim.env.LLM_KEY = "None"
